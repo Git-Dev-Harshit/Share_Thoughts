@@ -1,0 +1,32 @@
+/* Centering the page horizontally and vertically */
+body,html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container styling */
+.container {
+  width: 100%;
+  height: auto;
+  max-width: 400px; /* Optional: Set a max width for the form */
+  background-color: #c9c4c4;
+}
+
+/* Form input styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+form p {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.alert-container {
+    margin-top: 30px;  /* Adjust this value as needed */
+}

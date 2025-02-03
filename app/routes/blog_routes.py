@@ -1,23 +1,24 @@
 from flask import Blueprint, render_template
+from app.routes.auth_routes import login_required
 
-blogs = Blueprint(__name__)
+blogs = Blueprint('blogs', __name__)
 
-# Route to show all blogs
-@blogs.route('/home', method=['POST', 'GET'])
+@blogs.route('/home', methods=['GET'])
+@login_required
 def home():
-    return render_template('homepage.html')
+    return render_template('home.html')
 
-# Route to create new blog  
-@blogs.route('/create_blog', methods=['POST'])
+@blogs.route('/create_blog', methods=['POST', 'GET'])
+@login_required
 def create_blog():
     return render_template('create_blog.html')
 
-# Route to edit existing blog
-@blogs.route('/edit_blog', method=['PUT'])
+@blogs.route('/edit_blog', methods=['PUT', 'GET'])
+@login_required
 def edit_blog():
     return render_template('edit_blog.html')
 
-# Route to delete existing blog
-@blogs.route('/delete_blog', mehtod=['POST'])
+@blogs.route('/delete_blog', methods=['POST', 'GET'])
+@login_required
 def delete_blog():
     return render_template('delete_blog.html')
