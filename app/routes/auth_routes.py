@@ -70,7 +70,7 @@ def signup():
         session['email'] = new_user.email
         session['name'] = new_user.name
         session.permanent = True
-        current_app.permanent_session_lifetime = timedelta(days=7)
+        current_app.permanent_session_lifetime = timedelta(days=1)
         return redirect(url_for('blogs.home'))
     
     return render_template('signup.html')
